@@ -9,23 +9,7 @@ _templates:
 
 steps:
   - <<: *rake
-    name: ":ruby: 2.3"
-    env:
-      RUBY_IMAGE: "ruby:2.3"
-  - <<: *rake
-    name: ":ruby: 2.4"
-    env:
-      RUBY_IMAGE: "ruby:2.4"
-  - <<: *rake
-    name: ":ruby: 2.5"
-    env:
-      RUBY_IMAGE: "ruby:2.5"
-  - <<: *rake
-    name: ":ruby: 2.6"
-    env:
-      RUBY_IMAGE: "ruby:2.6"
-  - <<: *rake
     name: "JRuby"
     env:
       RUBY_IMAGE: "jruby:9.2.7.0" # https://github.com/jruby/jruby/issues/5863
-    soft_fail: true
+    parallelism: 20
