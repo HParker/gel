@@ -18,4 +18,5 @@ ADD . /app
 
 RUN ./bin/setup
 
+ENV TESTOPTS="-v"
 CMD ["./bin/rake"]
